@@ -3,10 +3,10 @@ import scala.util._
 
 object PrimaryFunc {
 
-  def factorial(n: Int): Try[Any] = n match {
+  def factorial(n: Int): Try[BigInt] = n match {
     case n if n < 0 => Failure(new Exception( s"Number must be higher then 0. Received ${n}"))
     case n if n > 50000 => Failure(new Exception(s"Number must be less then 50 000. Received ${n}"))
-    case 0 => Success(1)
+    case 0 => Success(BigInt(1))
     case _ => Success((BigInt(1) to BigInt(n)).product)
   }
 

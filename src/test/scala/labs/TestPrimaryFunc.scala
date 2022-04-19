@@ -13,7 +13,7 @@ class TestPrimaryFunc {
     PrimaryFunc.factorial(N) match {
       case Failure(e) =>
         assert(e.getMessage.endsWith(s"Number must be higher then 0. Received ${N}"))
-      case _ => ???
+      case _ => fail("Should fail")
     }
   }
 
@@ -23,7 +23,7 @@ class TestPrimaryFunc {
     PrimaryFunc.factorial(N) match {
       case Failure(e) =>
         assert(e.getMessage.endsWith(s"Number must be less then 50 000. Received ${N}"))
-      case _ => ???
+      case _ => fail("Should fail")
     }
   }
 
@@ -32,7 +32,7 @@ class TestPrimaryFunc {
     val N = 5
     PrimaryFunc.factorial(N) match {
       case Success(value) => assert(value == 120)
-      case _ => ???
+      case _ => fail("Should success")
     }
   }
 
@@ -60,7 +60,7 @@ class TestPrimaryFunc {
     PrimaryFunc.fibonacci(N) match {
       case Failure(e) =>
         assert(e.getMessage.endsWith(s"Number must be higher then 0. Received ${N}"))
-      case _ => ???
+      case _ => fail("Should fail")
     }
   }
 
@@ -69,7 +69,7 @@ class TestPrimaryFunc {
     val N = 0
     PrimaryFunc.fibonacci(N) match {
       case Success(value) => assert(value == 0)
-      case _ => ???
+      case _ => fail("Should success")
     }
   }
 
